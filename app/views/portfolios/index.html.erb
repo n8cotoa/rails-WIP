@@ -1,0 +1,30 @@
+<h1>My Portfolio</h1>
+
+<% if current_user.admin %>
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Admin", admins_path %></li>
+      </ul>
+    </div>
+  </nav>
+<% end %>
+<p><%= link_to 'Sign In', new_user_session_path %></p>
+
+<div class="about">
+  <h2>About Me</h2>
+  <div class="skills">
+    <h3>Skills</h3>
+  </div>
+  <div class="hobbies">
+    <h3>Hobbies</h3>
+  </div>
+</div>
+
+<div class="projects">
+  <h2>Projects</h2>
+</div>
+
+<div class="contact">
+  <h2>Contact</h2>
+</div>
