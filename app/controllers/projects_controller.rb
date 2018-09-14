@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
       redirect_to admins_path
     else
       flash[:alert] = "Project was not saved, please check submission"
-      redirect_to new_project
+      redirect_to new_project_path
     end
   end
 

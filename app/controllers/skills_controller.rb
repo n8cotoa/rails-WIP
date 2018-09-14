@@ -11,7 +11,7 @@ class SkillsController < ApplicationController
       redirect_to admins_path
     else
       flash[:alert] = "Skill was not saved, please check submission"
-      redirect_to new_skill
+      redirect_to new_skill_path
     end
   end
 

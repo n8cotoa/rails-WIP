@@ -1,19 +1,68 @@
-<h1>My Portfolio</h1>
+<div class="projects">
+  <h2>Projects</h2>
+  <div class="col">
+    <div class="row row-flex">
+      <% @projects.each do |project| %>
+      <div class="card" style="width: 18rem;">
+        <% if project.image.attached? %>
+          <%= image_tag project.image, class: 'card-img-top'%>
+        <%end%>
+        <div class="card-body">
+          <h5 class="card-title"><%= project.name %></h5>
+          <p class="card-text"><%= project.description %></p>
+          <p><%= link_to "Repository Link", project.repo_link %></p>
+          <p><%= link_to "Deployed Project", project.deployment_link %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 
 <div class="about">
   <h2>About Me</h2>
   <div class="skills">
     <h3>Skills</h3>
+    <table class='table'>
+      <tr>
+        <th>Name</th>
+        <th>Years Experience</th>
+      </tr>
+      <% @skills.each do |skill| %>
+      <tr>
+        <td><%= skill.name %></td>
+        <td><%= skill.experience %></td>
+      </tr>
+      <% end %>
+    </table>
   </div>
   <div class="hobbies">
     <h3>Hobbies</h3>
+    <div class="col">
+      <div class="row row-flex">
+        <% @hobbies.each do |hobby| %>
+        <div class="card" style="width: 18rem;">
+          <% if hobby.image.attached? %>
+            <%= image_tag hobby.image, class: 'card-img-top'%>
+          <%end%>
+          <div class="card-body">
+            <h5 class="card-title"><%= hobby.name %></h5>
+            <p class="card-text"><%= hobby.description %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="projects">
-  <h2>Projects</h2>
-</div>
+
 
 <div class="contact">
   <h2>Contact</h2>
+  <div class="contact-info">
+    <p>Nate Cottle</p>
+    <p>cottle.nate@gmail.com</p>
+  </div>
 </div>

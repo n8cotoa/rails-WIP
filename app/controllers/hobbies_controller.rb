@@ -11,7 +11,7 @@ class HobbiesController < ApplicationController
       redirect_to admins_path
     else
       flash[:alert] = "Hobby was not saved, please check submission"
-      redirect_to new_hobby
+      redirect_to new_hobby_path
     end
   end
 

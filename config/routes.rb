@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   resources :skills, :hobbies, :projects, :only => [:new, :create, :destroy, :edit, :update]
 
+  post 'contact' => 'portfolios#contact'
 end
