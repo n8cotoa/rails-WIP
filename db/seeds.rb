@@ -10,5 +10,11 @@ Project.destroy_all
 Hobby.destroy_all
 
 10.times do
-  Skill.create!
+  Skill.create!(name: Faker::Zelda.unique.item,
+                experience: Random.rand(1..10))
+end
+
+10.times do
+  hobby = Hobby.create!(name: Faker::LordOfTheRings.unique.location,
+                description: Faker::Hobbit.unique.quote)
 end

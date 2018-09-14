@@ -1,6 +1,19 @@
 
 @import "bootstrap";
 
+body {
+  margin-bottom: 100px;
+}
+
 .admin-info h2 {
   text-align: center;
+}
+
+.row-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  margin: 10px;
 }

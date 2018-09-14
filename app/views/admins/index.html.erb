@@ -11,28 +11,39 @@
       <th>Delete</th>
     </tr>
     <% @skills.each do |skill| %>
+    <tr>
       <td><%= skill.name %></td>
       <td><%= skill.experience %></td>
       <td><span><%= link_to "Edit", edit_skill_path(skill), class: 'btn btn-warning' %></span></td>
-      <td><span><%= link_to "Delete", skill_path(skill), :data => {:method => "delete"}, class: 'btn btn-warning' %></span></td>
+      <td><span><%= link_to "Delete", skill_path(skill), :data => {:method => "delete"}, class: 'btn btn-danger' %></span></td>
+    </tr>
     <% end %>
   </table>
   <h2>Hobbies</h2>
-  <ul>
-    <% @hobbies.each do |hobby| %>
-      <li><%= hobby.name %></li>
-      <%= image_tag hobby.image %>
-      <span><%= link_to "Edit", edit_hobby_path(hobby), class: 'btn btn-warning' %></span>
-      <span><%= link_to "Delete", hobby_path(hobby), :data => {:method => "delete"}, class: 'btn btn-warning' %></span>
-    <% end %>
-  </ul>
+  <div class="col">
+    <div class="row row-flex">
+      <% @hobbies.each do |hobby| %>
+      <div class="card" style="width: 18rem;">
+        <% if hobby.image.attached? %>
+          <%= image_tag hobby.image, class: 'card-img-top'%>
+        <%end%>
+        <div class="card-body">
+          <h5 class="card-title"><%= hobby.name %></h5>
+          <p class="card-text"><%= hobby.description %></p>
+          <span><%= link_to "Edit", edit_hobby_path(hobby), class: 'btn btn-warning' %></span>
+          <span><%= link_to "Delete", hobby_path(hobby), :data => {:method => "delete"}, class: 'btn btn-danger' %></span>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
   <h2>Projects</h2>
   <ul>
     <% @projects.each do |project| %>
       <li><%= project.name %></li>
       <%= image_tag project.image %>
       <span><%= link_to "Edit", edit_project_path(project), class: 'btn btn-warning' %></span>
-      <span><%= link_to "Delete", project_path(project), :data => {:method => "delete"}, class: 'btn btn-warning' %></span>
+      <span><%= link_to "Delete", project_path(project), :data => {:method => "delete"}, class: 'btn btn-danger' %></span>
     <% end %>
   </ul>
 </div>
