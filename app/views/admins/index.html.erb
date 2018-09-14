@@ -2,5 +2,7 @@
 <ul>
   <% @skills.each do |skill| %>
     <li><%= skill.name %></li>
+    <span><%= link_to "Edit", edit_skill_path(skill), class: 'btn btn-warning' %></span>
+    <span><%= link_to "Delete", skill_path(skill), :data => {:method => "delete"}, class: 'btn btn-warning' %></span>
   <% end %>
 </ul>

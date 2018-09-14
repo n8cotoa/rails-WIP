@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   resources :admins, :only => [:index]
 
-  resources :skills, :only => [:new, :create, :destroy]
+  resources :skills, :only => [:new, :create, :destroy, :edit, :update]
 
 end
