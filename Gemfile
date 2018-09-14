@@ -50,6 +50,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
   gem 'faker'
+  gem 'capybara'
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 group :development do
