@@ -1,26 +1,38 @@
-<h2>Skills</h2>
-<ul>
-  <% @skills.each do |skill| %>
-    <li><%= skill.name %></li>
-    <span><%= link_to "Edit", edit_skill_path(skill), class: 'btn btn-warning' %></span>
-    <span><%= link_to "Delete", skill_path(skill), :data => {:method => "delete"}, class: 'btn btn-warning' %></span>
-  <% end %>
-</ul>
-<h2>Hobbies</h2>
-<ul>
-  <% @hobbies.each do |hobby| %>
-    <li><%= hobby.name %></li>
-    <%= image_tag hobby.image %>
-    <span><%= link_to "Edit", edit_hobby_path(hobby), class: 'btn btn-warning' %></span>
-    <span><%= link_to "Delete", hobby_path(hobby), :data => {:method => "delete"}, class: 'btn btn-warning' %></span>
-  <% end %>
-</ul>
-<h2>Projects</h2>
-<ul>
-  <% @projects.each do |project| %>
-    <li><%= project.name %></li>
-    <%= image_tag project.image %>
-    <span><%= link_to "Edit", edit_project_path(project), class: 'btn btn-warning' %></span>
-    <span><%= link_to "Delete", project_path(project), :data => {:method => "delete"}, class: 'btn btn-warning' %></span>
-  <% end %>
-</ul>
+<div class="jumbotron">
+  <h1>Admin Portal</h1>
+</div>
+<div class="admin-info">
+  <h2>Skills</h2>
+  <table class='table'>
+    <tr>
+      <th>Name</th>
+      <th>Years Experience</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <% @skills.each do |skill| %>
+      <td><%= skill.name %></td>
+      <td><%= skill.experience %></td>
+      <td><span><%= link_to "Edit", edit_skill_path(skill), class: 'btn btn-warning' %></span></td>
+      <td><span><%= link_to "Delete", skill_path(skill), :data => {:method => "delete"}, class: 'btn btn-warning' %></span></td>
+    <% end %>
+  </table>
+  <h2>Hobbies</h2>
+  <ul>
+    <% @hobbies.each do |hobby| %>
+      <li><%= hobby.name %></li>
+      <%= image_tag hobby.image %>
+      <span><%= link_to "Edit", edit_hobby_path(hobby), class: 'btn btn-warning' %></span>
+      <span><%= link_to "Delete", hobby_path(hobby), :data => {:method => "delete"}, class: 'btn btn-warning' %></span>
+    <% end %>
+  </ul>
+  <h2>Projects</h2>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><%= project.name %></li>
+      <%= image_tag project.image %>
+      <span><%= link_to "Edit", edit_project_path(project), class: 'btn btn-warning' %></span>
+      <span><%= link_to "Delete", project_path(project), :data => {:method => "delete"}, class: 'btn btn-warning' %></span>
+    <% end %>
+  </ul>
+</div>
