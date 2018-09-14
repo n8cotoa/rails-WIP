@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   resources :portfolios, :only => [:index]
 
-  resources :admins, :only => [:index] do
-    resources :skills
-  end
+  resources :admins, :only => [:index]
+
+  resources :skills, :only => [:new, :create, :destroy]
 
 end
