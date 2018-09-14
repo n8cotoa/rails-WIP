@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
   def index
     @skills = Skill.all
     @hobbies = Hobby.all
+    @projects = Project.all
   end
 
 end

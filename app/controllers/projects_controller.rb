@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(hobbies_params)
+    @project = Project.new(project_params)
     if @project.save
       flash[:notice] = "Project successfully added."
       redirect_to admins_path
@@ -37,7 +37,7 @@ class ProjectsController < ApplicationController
 
 private
   def project_params
-    params.require(:project).permit(:name, :description, :image)
+    params.require(:project).permit(:name, :description, :repo_link, :deployment_link, :image)
   end
 
 
