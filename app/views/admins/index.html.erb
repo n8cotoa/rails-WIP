@@ -6,3 +6,12 @@
     <span><%= link_to "Delete", skill_path(skill), :data => {:method => "delete"}, class: 'btn btn-warning' %></span>
   <% end %>
 </ul>
+<h2>Hobbies</h2>
+<ul>
+  <% @hobbies.each do |hobby| %>
+    <li><%= hobby.name %></li>
+    <%= image_tag hobby.image %>
+    <span><%= link_to "Edit", edit_hobby_path(hobby), class: 'btn btn-warning' %></span>
+    <span><%= link_to "Delete", hobby_path(hobby), :data => {:method => "delete"}, class: 'btn btn-warning' %></span>
+  <% end %>
+</ul>
