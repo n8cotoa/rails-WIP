@@ -38,12 +38,22 @@
     </div>
   </div>
   <h2>Projects</h2>
-  <ul>
-    <% @projects.each do |project| %>
-      <li><%= project.name %></li>
-      <%= image_tag project.image %>
-      <span><%= link_to "Edit", edit_project_path(project), class: 'btn btn-warning' %></span>
-      <span><%= link_to "Delete", project_path(project), :data => {:method => "delete"}, class: 'btn btn-danger' %></span>
-    <% end %>
-  </ul>
-</div>
+  <div class="col">
+    <div class="row row-flex">
+      <% @projects.each do |project| %>
+      <div class="card" style="width: 18rem;">
+        <% if project.image.attached? %>
+          <%= image_tag project.image, class: 'card-img-top'%>
+        <%end%>
+        <div class="card-body">
+          <h5 class="card-title"><%= project.name %></h5>
+          <p class="card-text"><%= project.description %></p>
+          <p><%= link_to "Repository Link", project.repo_link %></p>
+          <p><%= link_to "Deployed Project", project.deployment_link %></p>
+          <span><%= link_to "Edit", edit_project_path(project), class: 'btn btn-warning' %></span>
+          <span><%= link_to "Delete", project_path(project), :data => {:method => "delete"}, class: 'btn btn-danger' %></span>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
