@@ -1,6 +1,7 @@
 class PortfoliosController < ApplicationController
   def index
-    @title = "My Portfolio"
+    @title = "Nate Cottle"
+    @subtitle = 'Junior Web Developer'
     @projects = Project.all
     @hobbies = Hobby.all
     @skills = Skill.all

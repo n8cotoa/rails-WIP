@@ -10,6 +10,7 @@
   </head>
   <div class="jumbotron">
     <h1><%= @title %></h1>
+    <h2><%= @subtitle %></h2>
   </div>
   <% if !current_user || current_user.admin == false %>
     <nav class="navbar fixed-bottom  navbar-expand-lg navbar-light bg-light">
@@ -57,14 +58,12 @@
     </nav>
   <% end %>
   <body>
-    <div class="container">
-      <div class="alert">
-        <%= flash[:alert] %>
-      </div>
-      <div class="notice">
-        <%= flash[:notice] %>
-      </div>
-      <%= yield %>
+    <div class="alert">
+      <%= flash[:alert] %>
     </div>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+    <%= yield %>
   </body>
 </html>

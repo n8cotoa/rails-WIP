@@ -3,10 +3,25 @@
 
 body {
   margin-bottom: 100px;
+  background-image: image-url('profile_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.jumbotron {
+  border-radius: 0 !important;
+  background-color: #1D2B3F;
+  color: ivory;
+}
+
+.jumbotron h1, .jumbotron h2 {
+  text-align: center;
 }
 
 .jumbotron h1 {
-  text-align: center;
+  font-size: 6rem;
 }
 
 .notice {
@@ -15,6 +30,49 @@ body {
 
 .alert {
   width: 80%;
+}
+
+.portfolio {
+
+}
+
+.projects {
+  background-color: #331122;
+  padding: 20px;
+}
+
+.projects-heading {
+  background-color: #ccddee;
+  padding: 25px;
+  padding-bottom: 35px;
+  margin-bottom: -10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin-top: 25vw;
+}
+
+.about-heading {
+  background-color: #ccddee;
+  padding: 25px;
+  padding-bottom: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin-top: 25vw;
+}
+
+.skills-header {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.skills {
+  display: flex;
+}
+
+.skills .cards {
+
 }
 
 .admin-info h2 {
