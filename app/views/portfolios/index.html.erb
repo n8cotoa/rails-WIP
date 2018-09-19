@@ -29,7 +29,7 @@
         <% @skills.each do |skill| %>
           <div class="card" style="width: 10rem;">
             <% if skill.image.attached? %>
-              <%= image_tag skill.image, width: 200%>
+              <%= image_tag skill.image, class:'skill-icon'%>
             <%end%>
             <p><%= skill.name %></p>
           </div>
