@@ -17,41 +17,37 @@
     <% end %>
   </table>
   <h2>Hobbies</h2>
-  <div class="col">
-    <div class="row row-flex">
-      <% @hobbies.each do |hobby| %>
-      <div class="card" style="width: 18rem;">
-        <% if hobby.image.attached? %>
-          <%= image_tag hobby.image, class: 'card-img-top'%>
-        <%end%>
-        <div class="card-body">
-          <h5 class="card-title"><%= hobby.name %></h5>
-          <p class="card-text"><%= hobby.description %></p>
-          <span><%= link_to "Edit", edit_hobby_path(hobby), class: 'btn btn-warning' %></span>
-          <span><%= link_to "Delete", hobby_path(hobby), :data => {:method => "delete"}, class: 'btn btn-danger' %></span>
-        </div>
+  <div class="cards-container">
+    <% @hobbies.each do |hobby| %>
+    <div class="card" style="width: 18rem;">
+      <% if hobby.image.attached? %>
+        <%= image_tag hobby.image, class: 'card-img-top'%>
+      <%end%>
+      <div class="card-body">
+        <h5 class="card-title"><%= hobby.name %></h5>
+        <p class="card-text"><%= hobby.description %></p>
+        <span><%= link_to "Edit", edit_hobby_path(hobby), class: 'btn btn-warning' %></span>
+        <span><%= link_to "Delete", hobby_path(hobby), :data => {:method => "delete"}, class: 'btn btn-danger' %></span>
       </div>
-      <% end %>
     </div>
+    <% end %>
   </div>
   <h2>Projects</h2>
-  <div class="col">
-    <div class="row row-flex">
-      <% @projects.each do |project| %>
-      <div class="card" style="width: 18rem;">
-        <% if project.image.attached? %>
-          <%= image_tag project.image, class: 'card-img-top'%>
-        <%end%>
-        <div class="card-body">
-          <h5 class="card-title"><%= project.name %></h5>
-          <p class="card-text"><%= project.description %></p>
-          <p><%= link_to "Repository Link", project.repo_link %></p>
-          <p><%= link_to "Deployed Project", project.deployment_link %></p>
-          <span><%= link_to "Edit", edit_project_path(project), class: 'btn btn-warning' %></span>
-          <span><%= link_to "Delete", project_path(project), :data => {:method => "delete"}, class: 'btn btn-danger' %></span>
-        </div>
+  <div class="cards-container">
+    <% @projects.each do |project| %>
+    <div class="card" style="width: 18rem;">
+      <% if project.image.attached? %>
+        <%= image_tag project.image, class: 'card-img-top'%>
+      <%end%>
+      <div class="card-body">
+        <h5 class="card-title"><%= project.name %></h5>
+        <p class="card-text"><%= project.description %></p>
+        <p><%= link_to "Repository Link", project.repo_link %></p>
+        <p><%= link_to "Deployed Project", project.deployment_link %></p>
+        <span><%= link_to "Edit", edit_project_path(project), class: 'btn btn-warning' %></span>
+        <span><%= link_to "Delete", project_path(project), :data => {:method => "delete"}, class: 'btn btn-danger' %></span>
       </div>
-      <% end %>
     </div>
+    <% end %>
   </div>
 </div>
